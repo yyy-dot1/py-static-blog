@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{% block title %}{% endblock %} - My Blog</title>
+    <link rel="stylesheet" href="/static/style.css">
+</head>
+<body>
+    <header>
+        <h1><a href="/">My Debug Blog</a></h1>
+        <nav>
+            <a href="/">Home</a> | <a href="/tags/">Tags</a>
+        </nav>
+    </header>
+
+    <main>
+        {% block content %}{% endblock %}
+    </main>
+
+    <footer>
+        <p>&copy;自作 Python静的サイトジェネレータ + GitHub Pages 公開プロジェクトProject</p>
+    </footer>
+</body>
+</html>
