@@ -1,0 +1,28 @@
+{% extends "base.html" %}
+
+{% block title %}{{ post.title }} - soft cafe note{% endblock %}
+
+{% block content %}
+<article class="post-detail">
+    <header class="post-detail-header">
+        <div class="post-detail-meta">
+            <time class="post-date">{{ post.date }}</time>
+            <ul class="post-tags">
+                {% for tag in post.tags %}
+                <li class="tag-item">#{{ tag }}</li>
+                {% endfor %}
+            </ul>
+        </div>
+        <h1 class="post-detail-title">{{ post.title }}</h1>
+    </header>
+
+    <div class="post-detail-content">
+        {# Markdownから変換されたHTMLがここに入ります #}
+        {{ post.content | safe }}
+    </div>
+
+    <footer class="post-detail-footer">
+        <a href="/" class="back-to-home">← Back to Home</a>
+    </footer>
+</article>
+{% endblock %}

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>【代官山】テラス席が気持ちいい！朝活におすすめのベーカリー - soft cafe note</title>
+    <title>{% block title %}My Blog{% endblock %}</title>
     <link rel="stylesheet" href="/static/css/style.css">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,34 +31,7 @@
 </div>
 
     <main class="site-main">
-        
-<article class="post-detail">
-    <header class="post-detail-header">
-        <div class="post-detail-meta">
-            <time class="post-date">2026-03-28</time>
-            <ul class="post-tags">
-                
-                <li class="tag-item">#朝活</li>
-                
-                <li class="tag-item">#テラス席</li>
-                
-                <li class="tag-item">#パン</li>
-                
-            </ul>
-        </div>
-        <h1 class="post-detail-title">【代官山】テラス席が気持ちいい！朝活におすすめのベーカリー</h1>
-    </header>
-
-    <div class="post-detail-content">
-        
-        
-    </div>
-
-    <footer class="post-detail-footer">
-        <a href="/" class="back-to-home">← Back to Home</a>
-    </footer>
-</article>
-
+        {% block content %}{% endblock %}
     </main>
 
     <footer class="site-footer">

@@ -1,0 +1,198 @@
+.site-header {
+    padding: 2rem 0 0.5rem;
+    text-align: center;
+    position: relative;
+    z-index: 10; 
+}
+
+.post-content-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 1rem;
+    text-align: left;
+}
+
+.center-illustration {
+    position: absolute;
+    left: 50%;
+    /* top: 150px; */
+    top: 300px;
+    transform: translateX(-50%);
+    z-index: 1;
+}
+
+.center-illustration img {
+    max-width: 280px;
+    height: auto;
+}
+
+.post-list {
+    display: grid;
+    grid-template-columns: 1fr 1fr; 
+    gap: 100px 320px;
+    /* margin-top: 100px; */
+    position: relative;
+    z-index: 2;
+    margin-top: 130px;
+}
+
+.post-card:nth-child(1) { transform: rotate(-3deg) translateY(20px); }
+.post-card:nth-child(2) { transform: rotate(2deg) translateY(-10px); }
+.post-card:nth-child(3) { transform: rotate(1.5deg) translateY(30px); }
+.post-card:nth-child(4) { transform: rotate(-2deg); }
+
+body {
+    background-color: #fafaf8;
+    font-family: 'Zen Maru Gothic', sans-serif;
+    color: #8b7e74;
+    line-height: 1.8;
+    margin: 0;
+    overflow-x: hidden;
+}
+
+.site-header-inner, .site-main, .site-footer {
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.site-logo a {
+    font-family: 'Gaegu', cursive;
+    font-size: 4rem;
+    color: #c9bbc6;
+    text-decoration: none;
+    font-weight: 700;
+    margin: 0;
+    line-height: 1;
+}
+
+.site-nav {
+    margin-top: 0.5rem;
+    display: block;
+}
+
+.site-nav a {
+    color: #8b7e74;
+    text-decoration: none;
+    margin: 0 15px;
+    font-size: 0.9rem;
+}
+
+.post-card {
+    background: #fffef2;
+    padding: 2rem 1rem;
+    box-shadow: 3px 3px 10px rgba(0,0,0,0.05);
+}
+
+.post-card:nth-child(odd) { transform: rotate(-1.5deg); }
+.post-card:nth-child(even) { transform: rotate(1.5deg); }
+
+.post-card:hover {
+    transform: scale(1.02) rotate(0deg);
+    z-index: 5;
+}
+
+.masking-tape {
+    position: absolute;
+    top: -10px;
+    left: 50%;
+    transform: translateX(-50%) rotate(-2deg);
+    width: 70px;
+    height: 20px;
+    background-color: rgba(201, 187, 198, 0.5);
+    box-shadow: 1px 1px 2px rgba(0,0,0,0.03);
+    z-index: 10;
+}
+
+.post-meta {
+    font-size: 0.8rem;
+    color: #b0a49b;
+    margin-bottom: 0.5rem;
+}
+
+.post-title {
+    font-size: 1.1rem;
+    margin: 0;
+    line-height: 1.5;
+}
+
+.post-title a {
+    color: #8b7e74;
+    text-decoration: none;
+}
+
+.post-summary {
+    font-size: 0.9rem;
+    margin: 1rem 0;
+    display: none;
+}
+
+.post-tags {
+    list-style: none;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    gap: 8px;
+    margin-top: 1rem;
+}
+
+.tag-item {
+    font-size: 0.7rem;
+    padding: 2px 10px;
+    border-radius: 100px;
+    background-color: #f0ecf1;
+    color: #8b7e74;
+}
+
+@media (max-width: 768px) {
+    .post-list {
+        grid-template-columns: 1fr;
+        margin-top: 2rem;
+    }
+}
+
+/* カード内のレイアウト：画像と詳細を横に並べる */
+.post-content-inner {
+    display: flex;
+    align-items: flex-start;
+    gap: 15px;
+    margin-top: 1rem;
+}
+
+/* 左側の画像サイズ固定 */
+.post-thumbnail {
+    flex: 0 0 100px;
+}
+
+.post-thumbnail img {
+    width: 100%;
+    height: auto;
+    border-radius: 2px;
+}
+
+/* 右側のリストとアイコンの配置 */
+.post-details-wrap {
+    flex: 1;
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+/* ☆付きリストのスタイル */
+.post-details-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    font-size: 0.8rem;
+    text-align: left;
+}
+
+.site-subtitle {
+    font-family: 'Zen Maru Gothic', sans-serif;
+    font-size: 0.9rem;
+    color: #b0a49b;
+    letter-spacing: 0.05em;
+    font-weight: 400;
+    margin: 0 0 1rem;
+}

@@ -1,0 +1,38 @@
+{% extends "base.html" %}
+
+{% block content %}
+<div class="main-canvas">
+    <div class="center-illustration">
+        <img src="/static/images/girl_illustration.png" alt="Girl Illustration">
+    </div>
+
+    <div class="post-list">
+        {% for post in posts %}
+
+        <article class="post-card">
+            <div class="masking-tape"></div>
+
+            <h3 class="post-title">
+                <a href="/posts/{{ post.slug }}/index.html">{{ post.title }}</a>
+            </h3>
+
+            <div class="post-content-inner">
+                {% if post.post_image %}
+                <div class="post-thumbnail">
+                    <img src="{{ post.post_image }}" alt="Thumbnail">
+                </div>
+                {% endif %}
+
+                <div class="post-details-wrap">
+                    <ul class="post-details-list">
+                        {% for detail in post.details %}
+                        <li>#{{ detail }}</li>
+                        {% endfor %}
+                    </ul>
+                </div>
+            </div>
+        </article>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}
