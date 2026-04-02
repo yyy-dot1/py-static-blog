@@ -23,7 +23,7 @@
 }
 
 .center-illustration img {
-    max-width: 280px;
+    max-width: 200px;
     height: auto;
 }
 
@@ -34,13 +34,8 @@
     /* margin-top: 100px; */
     position: relative;
     z-index: 2;
-    margin-top: 130px;
+    margin-top: 50px;
 }
-
-.post-card:nth-child(1) { transform: rotate(-3deg) translateY(20px); }
-.post-card:nth-child(2) { transform: rotate(2deg) translateY(-10px); }
-.post-card:nth-child(3) { transform: rotate(1.5deg) translateY(30px); }
-.post-card:nth-child(4) { transform: rotate(-2deg); }
 
 body {
     background-color: #fafaf8;
@@ -51,7 +46,7 @@ body {
     overflow-x: hidden;
 }
 
-.site-header-inner, .site-main, .site-footer {
+.site-header-inner, .site-main {
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
@@ -59,10 +54,10 @@ body {
 
 .site-logo a {
     font-family: 'Gaegu', cursive;
-    font-size: 4rem;
+    font-size: 3rem;
     color: #c9bbc6;
     text-decoration: none;
-    font-weight: 700;
+    font-weight: 300;
     margin: 0;
     line-height: 1;
 }
@@ -81,15 +76,22 @@ body {
 
 .post-card {
     background: #fffef2;
-    padding: 2rem 1rem;
+    padding: 2.5rem 1.5rem;
     box-shadow: 3px 3px 10px rgba(0,0,0,0.05);
+    position: relative;
+    transition: transform 0.3s ease, clip-path 0.3s ease;
 }
 
 .post-card:nth-child(odd) { transform: rotate(-1.5deg); }
 .post-card:nth-child(even) { transform: rotate(1.5deg); }
 
+.post-card:nth-child(1) { transform: rotate(-3deg) translateY(20px); }
+.post-card:nth-child(2) { transform: rotate(2deg) translateY(-10px); }
+.post-card:nth-child(3) { transform: rotate(1.5deg) translateY(30px); }
+.post-card:nth-child(4) { transform: rotate(-2deg); }
+
 .post-card:hover {
-    transform: scale(1.02) rotate(0deg);
+    transform: scale(1.02) rotate(0deg) !important;
     z-index: 5;
 }
 
@@ -104,6 +106,9 @@ body {
     box-shadow: 1px 1px 2px rgba(0,0,0,0.03);
     z-index: 10;
 }
+
+.post-card:nth-child(odd) { transform: rotate(-1.5deg); }
+.post-card:nth-child(even) { transform: rotate(1.5deg); }
 
 .post-meta {
     font-size: 0.8rem;
@@ -152,7 +157,6 @@ body {
     }
 }
 
-/* カード内のレイアウト：画像と詳細を横に並べる */
 .post-content-inner {
     display: flex;
     align-items: flex-start;
@@ -160,7 +164,15 @@ body {
     margin-top: 1rem;
 }
 
-/* 左側の画像サイズ固定 */
+.site-footer {
+    max-width: 500px;
+    margin: 4rem auto 2rem;
+    padding: 0 20px;
+    text-align: center;
+    font-size: 1rem;
+    color: #b0a49b;
+}
+
 .post-thumbnail {
     flex: 0 0 100px;
 }
@@ -171,7 +183,6 @@ body {
     border-radius: 2px;
 }
 
-/* 右側のリストとアイコンの配置 */
 .post-details-wrap {
     flex: 1;
     display: flex;
@@ -179,7 +190,6 @@ body {
     align-items: flex-end;
 }
 
-/* ☆付きリストのスタイル */
 .post-details-list {
     list-style: none;
     padding: 0;
