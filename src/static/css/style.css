@@ -17,13 +17,13 @@
     position: absolute;
     left: 50%;
     /* top: 150px; */
-    top: 250px;
+    top: 300px;
     transform: translateX(-50%);
     z-index: 1;
 }
 
 .center-illustration img {
-    max-width: 280px;
+    max-width: 200px;
     height: auto;
 }
 
@@ -206,4 +206,3 @@ body {
     font-weight: 400;
     margin: 0 0 1rem;
 }
-
