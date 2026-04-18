@@ -14,27 +14,28 @@
 }
 
 .center-illustration {
-    position: absolute;
-    left: 50%;
-    /* top: 150px; */
-    top: 500px;
-    transform: translateX(-50%);
+    /* position: absolute; はやめる */
+    text-align: center;      /* 真ん中に寄せる */
+    margin-top: 30px;        /* ヘッダーとの隙間 */
+    margin-bottom: -30px;    /* 記事リストとの隙間を少し詰める（お好みで） */
+    position: relative;      /* 重なりの順序のために一応残す */
     z-index: 1;
 }
 
 .center-illustration img {
-    max-width: 500px;
+    max-width: 500px;        /* 女の子の大きさ */
     height: auto;
+    display: inline-block;   /* 中央寄せを効かせる */
 }
 
+/* 記事リストが女の子に被りすぎないように調整 */
 .post-list {
     display: grid;
-    grid-template-columns: 1fr 1fr; 
-    gap: 100px 320px;
-    /* margin-top: 100px; */
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 100px;         /* 縦の隙間を少し広げると見やすいです */
     position: relative;
     z-index: 2;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 body {
@@ -47,6 +48,7 @@ body {
 }
 
 .site-header-inner, .site-main {
+    position: relative;
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;

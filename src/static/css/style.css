@@ -14,27 +14,28 @@
 }
 
 .center-illustration {
-    position: absolute;
-    left: 50%;
-    /* top: 150px; */
-    top: 500px;
-    transform: translateX(-50%);
+    /* position: absolute; はやめる */
+    text-align: center;      /* 真ん中に寄せる */
+    margin-top: 30px;        /* ヘッダーとの隙間 */
+    margin-bottom: -30px;    /* 記事リストとの隙間を少し詰める（お好みで） */
+    position: relative;      /* 重なりの順序のために一応残す */
     z-index: 1;
 }
 
 .center-illustration img {
-    max-width: 500px;
+    max-width: 500px;        /* 女の子の大きさ */
     height: auto;
+    display: inline-block;   /* 中央寄せを効かせる */
 }
 
+/* 記事リストが女の子に被りすぎないように調整 */
 .post-list {
     display: grid;
-    grid-template-columns: 1fr 1fr; 
-    gap: 100px 320px;
-    /* margin-top: 100px; */
+    grid-template-columns: 1fr 1fr;
+    gap: 40px 100px;         /* 縦の隙間を少し広げると見やすいです */
     position: relative;
     z-index: 2;
-    margin-top: 50px;
+    margin-top: 20px;
 }
 
 body {
@@ -47,6 +48,7 @@ body {
 }
 
 .site-header-inner, .site-main {
+    position: relative;
     max-width: 1000px;
     margin: 0 auto;
     padding: 0 20px;
@@ -217,4 +219,71 @@ body {
 
 .post-card {
   height: 100%;
+}
+
+/* --- 背景にお花を散りばめる --- */
+.page-bg {
+    background-image: 
+        url('/static/images/flower_pattern_01.png'), /* 左上の小花 */
+        url('/static/images/flower_pattern_02.png'); /* 右下の小花 */
+    background-position: left top, right bottom;
+    background-repeat: no-repeat;
+    background-attachment: fixed; /* 画面と一緒に動かない */
+    opacity: 0.2; /* うっすらと馴染ませる */
+}
+
+/* --- カードの陰からのぞく猫 --- */
+.post-card:nth-child(2)::after { /* 2枚目のカード（中級）の後ろに配置 */
+    content: '';
+    position: absolute;
+    bottom: -15px;
+    right: -20px;
+    width: 60px;
+    height: 60px;
+    background-image: url('/static/images/cat_peek.png'); /* のぞく猫のイラスト */
+    background-size: contain;
+    background-repeat: no-repeat;
+    z-index: -1; /* カードの後ろ */
+    transition: transform 0.3s ease; /* ホバーで少し動かす */
+}
+
+/* カードをホバーしたら、猫がさらにのぞく */
+.post-card:nth-child(2):hover::after {
+    transform: translate(5px, -5px);
+}
+
+/* --- 花びらを降らせるアニメーション --- */
+@keyframes flowerFall {
+    0% {
+        transform: translateY(-100vh) translateX(0) rotate(0deg);
+        opacity: 0;
+    }
+    10% { opacity: 1; }
+    90% { opacity: 1; }
+    100% {
+        transform: translateY(100vh) translateX(50px) rotate(360deg);
+        opacity: 0;
+    }
+}
+
+.falling-flowers {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100vh;
+    overflow: hidden;
+    pointer-events: none; /* クリックを邪魔しない */
+    z-index: 100; /* 一番手前 */
+}
+
+.flower-petal {
+    position: absolute;
+    width: 15px; /* 花びらの大きさ */
+    height: 15px;
+    background-image: url('/static/images/flower_petal.png'); /* 花びらのイラスト */
+    background-size: contain;
+    background-repeat: no-repeat;
+    opacity: 0;
+    animation: flowerFall linear infinite;
 }
