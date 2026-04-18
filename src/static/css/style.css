@@ -17,13 +17,13 @@
     position: absolute;
     left: 50%;
     /* top: 150px; */
-    top: 300px;
+    top: 500px;
     transform: translateX(-50%);
     z-index: 1;
 }
 
 .center-illustration img {
-    max-width: 200px;
+    max-width: 500px;
     height: auto;
 }
 
@@ -205,4 +205,16 @@ body {
     letter-spacing: 0.05em;
     font-weight: 400;
     margin: 0 0 1rem;
+}
+
+.post-list {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+  max-width: 900px;
+  margin: 0 auto;
+}
+
+.post-card {
+  height: 100%;
 }
